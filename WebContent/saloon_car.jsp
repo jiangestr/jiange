@@ -144,7 +144,7 @@ body {
 											</p>
 											<p>
 												<a class="btn btn-primary"
-													href="${pageContext.request.contextPath }/com.jiange.servlet/DetailServlet?id=${car.id}">详情</a>
+													href="${pageContext.request.contextPath }/com.jiange.servlet/DetailServlet?id=${car.id}&license=${car.license}">详情</a>
 												<a class="btn" href="#">租赁</a>
 											</p>
 										</div>

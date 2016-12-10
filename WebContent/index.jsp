@@ -168,7 +168,7 @@ a>div {
 			</div>
 			<div>
 			
-			<jsp:include page="text2.jsp"></jsp:include>
+			<jsp:include page="roll.jsp"></jsp:include>
 			
 			
 			</div>

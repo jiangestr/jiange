@@ -7,6 +7,7 @@
 <%@page import="com.jiange.model.Car"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -56,12 +57,13 @@
 	height: 87px;
 	margin: 5px, auto, auto, 10px;
 }
-.marginLeft{
+
+.marginLeft {
 	margin-left: 9px;
 }
 </style>
 
-<script type="text/javascript" >
+<script type="text/javascript">
 	//表单提交验证
 	/* $(document).ready(function(){
 		$("form").submit(function(){
@@ -99,6 +101,25 @@ article {
 	display: block;
 	width: 960px;
 	margin: 20px 20px;
+}
+
+.data_list {
+	border: 1px solid #E5E5E5;
+	padding: 0px;
+}
+
+.data_list .dataHeader {
+	border-bottom: 1px solid #E5E5E5;
+	padding: 3px 10px 3px;
+	font-weight: bold;
+}
+
+.comment_list .commentDatas {
+	padding: 10px;
+}
+
+.buttom {
+	margin-top: 500px;
 }
 </style>
 
@@ -162,13 +183,13 @@ article {
 								<!-- 订单提交表单 -->
 								<form
 									action="<%=request.getContextPath()%>/com.jiange.servlet/OrderServlet?action=creatOrder&id=<%=car.getId()%>"
-									method="post" >
+									method="post">
 									<div class="navbar navbar-default  ">
 										<article>
 										<div>
-											<span class="marginLeft">借车时间：</span> <input type="text" class="marginLeft form-control"
-												name="time_out" style="width: 200px"
-												id="date-picker-input-1" readonly />
+											<span class="marginLeft">借车时间：</span> <input type="text"
+												class="marginLeft form-control" name="time_out"
+												style="width: 200px" id="date-picker-input-1" readonly />
 										</div>
 										</article>
 										<div style="margin: 20px 20px;">
@@ -189,20 +210,39 @@ article {
 										</div>
 
 										<div style="margin: 20px 20px;">
-											<span class="marginLeft">预计总价(元)</span></br> <input type="text" class="marginLeft form-control"
-												name="price" id="price"
+											<span class="marginLeft">预计总价(元)</span></br> <input type="text"
+												class="marginLeft form-control" name="price" id="price"
 												style="width: 70px; text-align: right;" value="0" readonly>
 										</div>
 										<div>
-											<input class="btn btn-info btn-block" type="submit" id="submit" onclick="submit()">
+											<input class="btn btn-info btn-block" type="submit"
+												id="submit" onclick="submit()">
 										</div>
 									</div>
 								</form>
+							</div>
+						</div>
 
+
+						<!--用户评价 -->
+						<div class="buttom">
+							<div class="data_list comment_list">
+								<div class="dataHeader">用户评论</div>
+								<div class="commentDatas">
+									<c:forEach var="evaluate" items="${evaluates }">
+										<div class="comment">
+											<font>用户${evaluate.username}:</font>
+											<br>
+											${evaluate.context}
+											<hr>
+										</div>
+									</c:forEach>
+								</div>
 							</div>
 						</div>
 
 					</div>
+
 					<div class="col-md-3 column">
 						<!-- 利用cookie保存浏览记录并显示浏览记录 -->
 						<%
@@ -240,13 +280,13 @@ article {
 								onmouseover="mouseover('a<%=i%>')"
 								onmouseout="mouseout('a<%=i%>')">
 								<a style="text-decoration: none"
-									href="<%=request.getContextPath()%>/com.jiange.servlet/DetailServlet?id=<%=carpass.getId()%>">
+									href="<%=request.getContextPath()%>/com.jiange.servlet/DetailServlet?id=<%=carpass.getId()%>&license=${carpass.license}">
 									<%
 										if (picture.length > 0) {
 									%> <img width="100px" alt="300x200"
 									src="<%=request.getContextPath()%>/image/<%=picture[0]%>" /> <%
-										}
-									%>
+ 	}
+ %>
 									<div class="caption">
 										<h3>
 											<%=carpass.getName()%>

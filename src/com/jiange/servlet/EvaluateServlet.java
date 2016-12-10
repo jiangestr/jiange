@@ -76,10 +76,12 @@ public class EvaluateServlet extends HttpServlet {
 		User user  = ((User)request.getSession().getAttribute("currentUser"));
 		String username = user.getUsername();
 		int orderId = Integer.parseInt(request.getParameter("orderId"));
+		String license = request.getParameter("license");
 		Evaluate evaluate2 = new Evaluate();
 		evaluate2.setOrderId(orderId);
 		evaluate2.setUsername(username);
 		evaluate2.setContext(context);
+		evaluate2.setLicense(license);
 		
 		//获取数据库连接
 		DaoFactory dao = new DaoFactory();

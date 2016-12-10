@@ -1,6 +1,8 @@
 package com.jiange.servlet;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +12,9 @@ import javax.servlet.http.HttpSession;
 
 import com.jiange.dao.CarDao;
 import com.jiange.dao.DaoFactory;
+import com.jiange.dao.EvaluateDao;
 import com.jiange.model.Car;
+import com.jiange.model.Evaluate;
 
 /**
  * Servlet implementation class DetailServlet
@@ -36,7 +40,14 @@ public class DetailServlet extends HttpServlet {
 		dao.openConnection();
 		
 		String id =request.getParameter("id");
+		String license = request.getParameter("license");
 		
+		//获取评论
+		EvaluateDao evaluateDao = dao.getEvaluateDao();
+		ArrayList<Evaluate> evaluates = evaluateDao.selectEvaluatesByCar(license);
+		request.setAttribute("evaluates", evaluates);
+		
+		//获取车辆信息
 		CarDao carDao = dao.getCarDao();
 		Car car = carDao.selectCar(id);
 		HttpSession session = request.getSession();

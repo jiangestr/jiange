@@ -5,6 +5,14 @@ public class Evaluate {
 	private String username;
 	private int orderId;
 	private String context;
+	private String license;
+	
+	public String getLicense() {
+		return license;
+	}
+	public void setLicense(String license) {
+		this.license = license;
+	}
 	public int getId() {
 		return id;
 	}

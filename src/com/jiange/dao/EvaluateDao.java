@@ -6,7 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+
 import com.jiange.model.Evaluate;
+
+import sun.awt.image.ImageWatched.Link;
 
 public class EvaluateDao {
 	
@@ -37,6 +40,41 @@ public class EvaluateDao {
 					evaluate.setUsername(result.getString(2));
 					evaluate.setOrderId(result.getInt(3));
 					evaluate.setContext(result.getString(4));
+					evaluates.add(evaluate);
+				}
+				
+			} finally {
+				result.close();
+			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return evaluates;
+	}
+	
+	/**
+	 * 通过车Id查看评价
+	 * @param id
+	 * @return
+	 */
+	public ArrayList<Evaluate> selectEvaluatesByCar (String license){
+		ArrayList<Evaluate> evaluates = new ArrayList<Evaluate>();
+		String sql = "select t_user_evaluate.id,username,order_id,"
+		+"context,car_license from t_user_evaluate,t_user where "
+				+"t_user.id = user_id and car_license=?";
+		try {
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, license);
+			ResultSet result = pstat.executeQuery();
+			try {
+				while(result.next()){
+					Evaluate evaluate = new Evaluate();
+					evaluate.setId(result.getInt(1));
+					evaluate.setUsername(result.getString(2));
+					evaluate.setOrderId(result.getInt(3));
+					evaluate.setContext(result.getString(4));
+					evaluate.setLicense(result.getString(5));
 					evaluates.add(evaluate);
 				}
 				
@@ -88,12 +126,13 @@ public class EvaluateDao {
 	 */
 	public boolean insertEvaluate(Evaluate evaluate){
 		boolean flag = false;
-		String sql = "insert t_user_evaluate values(null,(select id from t_user where username=?),?,?)";
+		String sql = "insert t_user_evaluate values(null,(select id from t_user where username=?),?,?,?)";
 		try {
 			pstat = conn.prepareStatement(sql);
 			pstat.setString(1, evaluate.getUsername());
 			pstat.setInt(2, evaluate.getOrderId());
 			pstat.setString(3,evaluate.getContext());
+			pstat.setString(4, evaluate.getLicense());
 			pstat.executeUpdate();
 			flag = true;
 		} catch (SQLException e) {
