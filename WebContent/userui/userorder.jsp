@@ -97,7 +97,6 @@
 									}
 								%>
 								<td><%=order.getReal_cost()%></td>
-
 							</tr>
 							<%
 								}
@@ -152,7 +151,6 @@
 								<td><%=order.getPre_cost()%></td>
 								<td>未还车</td>
 								<td><%=order.getReal_cost()%></td>
-
 							</tr>
 							<%
 										}
@@ -207,7 +205,7 @@
 								<td><%=order.getPre_cost()%></td>
 								<td><%=format.format(order.getReal_time_in())%></td>
 								<td><%=order.getReal_cost()%></td>
-
+								<td><a class="btn  btn-warning" href="${pageContext.request.contextPath }/com.jiange.servlet/EvaluateServlet?action=showPage&orderId=<%=order.getId()%>">评价</a></td>
 							</tr>
 							<%
 										}

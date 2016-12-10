@@ -17,7 +17,7 @@ public class EvaluateDao {
 	public EvaluateDao(Connection conn) {		
 		this.conn = conn;
 	}
-
+	
 	
 	/**
 	 * 查询所有的用户评论
@@ -79,6 +79,28 @@ public class EvaluateDao {
 			e.printStackTrace();
 		}
 		return evaluate;
+	}
+	
+	/**
+	 * 插入订单
+	 * @param evaluate
+	 * @return
+	 */
+	public boolean insertEvaluate(Evaluate evaluate){
+		boolean flag = false;
+		String sql = "insert t_user_evaluate values(null,(select id from t_user where username=?),?,?)";
+		try {
+			pstat = conn.prepareStatement(sql);
+			pstat.setString(1, evaluate.getUsername());
+			pstat.setInt(2, evaluate.getOrderId());
+			pstat.setString(3,evaluate.getContext());
+			pstat.executeUpdate();
+			flag = true;
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return flag;
 	}
 	
 	/**

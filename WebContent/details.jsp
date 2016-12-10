@@ -56,23 +56,41 @@
 	height: 87px;
 	margin: 5px, auto, auto, 10px;
 }
+.marginLeft{
+	margin-left: 9px;
+}
 </style>
 
-<script type="text/javascript">
+<script type="text/javascript" >
+	//表单提交验证
+	/* $(document).ready(function(){
+		$("form").submit(function(){
+			if($("#date-picker-input-1").value == null||$("#days").value == "0"){
+				return false;
+			}
+			else{
+				return true;
+			}
+		});
+	}); */
+	
+
+	//图片轮播
 	function choose(t) {
 		var p = document.getElementById("picture");
 		p.src = t;
 
 	}
-
+	
+	//cookie点击背景
 	function mouseover(s) {
 		var a = document.getElementById(s);
-		a.style.borderColor = "gray";
+		a.style.backgroundColor = "#CDCDB4";
 	}
 
 	function mouseout(s) {
 		var a = document.getElementById(s);
-		a.style.borderColor = "";
+		a.style.backgroundColor = "";
 	}
 </script>
 
@@ -144,19 +162,17 @@ article {
 								<!-- 订单提交表单 -->
 								<form
 									action="<%=request.getContextPath()%>/com.jiange.servlet/OrderServlet?action=creatOrder&id=<%=car.getId()%>"
-									method="post">
+									method="post" >
 									<div class="navbar navbar-default  ">
 										<article>
 										<div>
-											<span>借车时间：</span> <input type="text" class="form-control"
+											<span class="marginLeft">借车时间：</span> <input type="text" class="marginLeft form-control"
 												name="time_out" style="width: 200px"
 												id="date-picker-input-1" readonly />
 										</div>
 										</article>
-
-
 										<div style="margin: 20px 20px;">
-											<span>借车天数</span></br>
+											<span class="marginLeft">借车天数</span><br>
 											<div style="float: left;">
 												<span id="cut" onclick="cut(<%=car.getPrice()%>)"
 													style="font-size: x-large; cursor: pointer;">-</span>
@@ -173,12 +189,12 @@ article {
 										</div>
 
 										<div style="margin: 20px 20px;">
-											<span>预计总价</span></br> <input type="text" class="form-control"
+											<span class="marginLeft">预计总价(元)</span></br> <input type="text" class="marginLeft form-control"
 												name="price" id="price"
-												style="width: 70px; text-align: right;" value="0" readonly>元
+												style="width: 70px; text-align: right;" value="0" readonly>
 										</div>
 										<div>
-											<input type="submit" id="submit">
+											<input class="btn btn-info btn-block" type="submit" id="submit" onclick="submit()">
 										</div>
 									</div>
 								</form>
@@ -218,17 +234,17 @@ article {
 								String[] picture = carpass.getPicture().split(";");
 						%>
 						<div class="col-md-8">
-							<a style="text-decoration: none"
-								href="<%=request.getContextPath()%>/com.jiange.servlet/DetailServlet?id=<%=carpass.getId()%>">
-								<div class="thumbnail" id="a<%=i%>"
-									onmouseover="mouseover('a<%=i%>')"
-									onmouseout="mouseout('a<%=i%>')">
+
+
+							<div class="thumbnail" id="a<%=i%>"
+								onmouseover="mouseover('a<%=i%>')"
+								onmouseout="mouseout('a<%=i%>')">
+								<a style="text-decoration: none"
+									href="<%=request.getContextPath()%>/com.jiange.servlet/DetailServlet?id=<%=carpass.getId()%>">
 									<%
 										if (picture.length > 0) {
-									%>
-									<img width="100px" alt="300x200"
-										src="<%=request.getContextPath()%>/image/<%=picture[0]%>" />
-									<%
+									%> <img width="100px" alt="300x200"
+									src="<%=request.getContextPath()%>/image/<%=picture[0]%>" /> <%
 										}
 									%>
 									<div class="caption">
@@ -242,8 +258,9 @@ article {
 										</p>
 
 									</div>
-								</div>
-							</a>
+								</a>
+							</div>
+
 						</div>
 						<%
 							}
@@ -274,7 +291,7 @@ article {
 			if (num <= 1000) {
 				document.getElementById("days").value = ++num;
 			}
-			document.getElementById("price").value = s*(++num);
+			document.getElementById("price").value = s*(num);
 		}
 
 		function cut(s) {
@@ -282,7 +299,7 @@ article {
 			if (num > 1) {
 				document.getElementById("days").value = --num;
 			}
-			document.getElementById("price").value = s*(--num);
+			document.getElementById("price").value = s*(num);
 		}
 	</script>
 

@@ -4,7 +4,8 @@
 	import="com.jiange.dao.CarDao"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
 
@@ -36,13 +37,16 @@ var adverObject; //层对象
 
 <head>
 <style type="text/css">
-#fly{
+#fly {
 	position: absolute;
 	top: 0px;
 	right: 10px;
 	z-index: 2;
 }
-body{ background-color: #272727; }
+
+body {
+	background-color: #272727;
+}
 </style>
 <!-- 引入排行榜样式 -->
 
@@ -62,7 +66,7 @@ body{ background-color: #272727; }
 <title>Insert title here</title>
 </head>
 <body>
-<span id="aaa"></span>
+	<span id="aaa"></span>
 	<div class="container">
 		<div class="row clearfix">
 			<div class="col-md-12 column">
@@ -79,7 +83,7 @@ body{ background-color: #272727; }
 				<div class="row clearfix">
 					<div class="col-md-8 column" style="margin-top: 100px">
 						<div class="row">
-							<%
+							<%-- <%
 								ArrayList<Car> cars = (ArrayList<Car>) session.getAttribute("cars");
 								Iterator<Car> iter = cars.iterator();
 
@@ -118,7 +122,38 @@ body{ background-color: #272727; }
 							<%
 								}
 								}
-							%>
+							%> --%>
+
+
+							<!-- 用jstl实现 -->
+
+							<c:forEach var="car" items="${cars}" varStatus="index">
+								<div class="col-md-4">
+									<div class="thumbnail">
+										<c:set var="pictures" value="${fn:split(car.picture,';')}" />
+										<img alt="300x200" style="width: 200px; height: 130px"
+											src="/jiange/image/${ pictures[0]}" />
+
+										<div class="caption">
+											<h3>
+												<strong> ${car.getName()}</strong>
+											</h3>
+											<p>
+												车型：${car.type }<br /> 车牌：${car.license }<br />
+												核载：${car.ride }<br /> 载重：${car.load }<br /> 价格：${car.price }/天
+											</p>
+											<p>
+												<a class="btn btn-primary"
+													href="${pageContext.request.contextPath }/com.jiange.servlet/DetailServlet?id=${car.id}">详情</a>
+												<a class="btn" href="#">租赁</a>
+											</p>
+										</div>
+									</div>
+								</div>
+							</c:forEach>
+
+
+
 
 						</div>
 
@@ -151,10 +186,10 @@ body{ background-color: #272727; }
 
 						<section id="ranking" style="height: 500px">
 							<span id="ranking_title">本月热门车辆排行</span>
-							
+
 							<section id="ranking_list">
-								
-								
+
+
 								<section class="box">
 									<section class="col_1" title="1">1</section>
 									<section class="col_2">
@@ -179,19 +214,19 @@ body{ background-color: #272727; }
 									<section class="col_3">${rankings[3].name }</section>
 									<section class="col_4">${rankings[3].times }</section>
 								</section>
-								
+
 								<!-- 循环打印排名4-10的车辆 -->
 								<c:set var="num" value="3"></c:set>
 								<c:forEach var="ranking" items="${rankings }" begin="3">
-								<section class="box">
-									<section class="col_1">${num+1 }</section>
-									<c:set var="num" value="${num+1 }"></c:set>
-									<section class="col_2">
-										<img src="${pageContext.request.contextPath }/images/pic.jpg" />
+									<section class="box">
+										<section class="col_1">${num+1 }</section>
+										<c:set var="num" value="${num+1 }"></c:set>
+										<section class="col_2">
+											<img src="${pageContext.request.contextPath }/images/pic.jpg" />
+										</section>
+										<section class="col_3">${ranking.name}</section>
+										<section class="col_4">${ranking.times }</section>
 									</section>
-									<section class="col_3">${ranking.name}</section>
-									<section class="col_4">${ranking.times }</section>
-								</section>
 								</c:forEach>
 							</section>
 							<a id="play_game" href="#" title="开始游戏">开始游戏</a>
