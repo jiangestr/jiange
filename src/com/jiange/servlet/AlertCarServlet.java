@@ -45,49 +45,49 @@ public class AlertCarServlet extends HttpServlet {
 		//通过request里的action确定调用方法
 		if(action.equals("showadd")){
 			showCar(request, response);
-			request.setAttribute("mainPage", "result/addcar.jsp");
-			request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+			request.setAttribute("mainPage", "background/result/addcar.jsp");
+			request.getRequestDispatcher("/background/result/addcar.jsp").forward(request, response);
 		}
 		
 		if(action.equals("showCar")){
 			showCar(request, response);
-			request.setAttribute("mainPage", "result/alter-cars.jsp");
-			request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+			request.setAttribute("mainPage", "background/result/alter-cars.jsp");
+			request.getRequestDispatcher("/background/result/alter-cars.jsp").forward(request, response);
 		}
 		
 		if(action.equals("showCars")){
 			showCars(request, response);
-			request.setAttribute("mainPage", "result/alertcar.jsp");
-			request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+			request.setAttribute("mainPage", "background/result/alertcar.jsp");
+			request.getRequestDispatcher("/background/result/alertcar.jsp").forward(request, response);
 		}
 		if(action.equals("addCar")){
 			if(addCar(request, response)){
-				request.setAttribute("mainPage", "result/success.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/success.jsp");
+				request.getRequestDispatcher("/background/result/success.jsp").forward(request, response);
 			}
 			else{
-				request.setAttribute("mainPage", "result/false.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/false.jsp");
+				request.getRequestDispatcher("/background/result/false.jsp").forward(request, response);
 			}
 		}
 		if(action.equals("deleteCar")){
 			if(deleteCar(request, response)){
-				request.setAttribute("mainPage", "result/success.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/success.jsp");
+				request.getRequestDispatcher("/background/result/success.jsp").forward(request, response);
 			}
 			else{
-				request.setAttribute("mainPage", "result/false.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/false.jsp");
+				request.getRequestDispatcher("/background/result/false.jsp").forward(request, response);
 			}
 		}
 		if(action.equals("updateCar")){
 			if(updateCar(request, response)){
-				request.setAttribute("mainPage", "result/success.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/success.jsp");
+				request.getRequestDispatcher("/background/result/success.jsp").forward(request, response);
 			}
 			else{
-				request.setAttribute("mainPage", "result/false.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/false.jsp");
+				request.getRequestDispatcher("/background/result/false.jsp").forward(request, response);
 			}
 		}
 		

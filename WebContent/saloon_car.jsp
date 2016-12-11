@@ -10,24 +10,9 @@
 <html>
 
 <script type="text/javascript">
-//实现排行榜悬浮效果
-var adverTop; //层距页面顶端距离
-var adverObject; //层对象
-var adverTop; //层距页面顶端距离
-var adverObject; //层对象
-
-	function inix() {
-		var adverObject = document.getElementById("fly"); //获得层对象
-		if (adverObject.currentStyle) {
-			adverTop = parseInt(adverObject.currentStyle.top);
-		} else {
-			adverTop = parseInt(document.defaultView.getComputedStyle(
-					adverObject, null).top);
-		}
-	}
+//排行榜悬浮效果
+	
 	function move() {
-		
-		inix();
 		var adverObject = document.getElementById("fly"); //获得层对象
 		adverObject.style.top = window.pageYOffset+ "px";
 	}

@@ -43,32 +43,32 @@ public class AlterOrderServlet extends HttpServlet {
 		String action = request.getParameter("action");
 		if(action.equals("showOrders")){
 			showOrders(request, response);
-			request.setAttribute("mainPage", "result/alterorder.jsp");
-			request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+			request.setAttribute("mainPage", "background/result/alterorder.jsp");
+			request.getRequestDispatcher("/background/result/alterorder.jsp").forward(request, response);
 		}
 		if(action.equals("showOrder")){
 			showOrder(request, response);
-			request.setAttribute("mainPage", "result/alter-order.jsp");
-			request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+			request.setAttribute("mainPage", "background/result/alter-order.jsp");
+			request.getRequestDispatcher("/background/result/alter-order.jsp").forward(request, response);
 		}
 		if(action.equals("deleteOrder")){
 			if(deleteOrder(request, response)){
-				request.setAttribute("mainPage", "result/success.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/success.jsp");
+				request.getRequestDispatcher("/background/result/success.jsp").forward(request, response);
 			}
 			else {
-				request.setAttribute("mainPage", "result/false.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/false.jsp");
+				request.getRequestDispatcher("/background/result/false.jsp").forward(request, response);
 			}
 		}
 		if(action.equals("updateOrder")){
 			if(updateOrder(request, response)){
-				request.setAttribute(mainPage, "result/success.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute(mainPage, "background/result/success.jsp");
+				request.getRequestDispatcher("/background/result/success.jsp").forward(request, response);
 			}
 			else{
-				request.setAttribute("mainPage", "result/false.jsp");
-				request.getRequestDispatcher("/background/mainTamp.jsp").forward(request, response);
+				request.setAttribute("mainPage", "background/result/false.jsp");
+				request.getRequestDispatcher("/background/result/false.jsp").forward(request, response);
 			}
 		}
 	}
