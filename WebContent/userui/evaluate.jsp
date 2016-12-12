@@ -28,7 +28,7 @@ span {
 
 	<form class="form-horizontal" role="form"
 		action="<%=request.getContextPath() %>/com.jiange.servlet/EvaluateServlet?action=insert&orderId=<%=request.getParameter("orderId") %>"
-		method="post" >
+		method="post">
 
 		<div>
 			<h3>填写评价</h3>

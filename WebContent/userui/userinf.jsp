@@ -1,6 +1,6 @@
 <%@page import="java.net.URLDecoder"%>
 <%@page import="com.jiange.model.User"%>
-<%@page import="java.net.URLEncoder" %>
+<%@page import="java.net.URLEncoder"%>
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
 
@@ -32,7 +32,7 @@ h6 {
 <title>Insert title here</title>
 </head>
 <body>
-<%	//根据用户名找到存储在本地的cookie，从中提取用户信息，用户信息的内容用“，”隔开。
+	<%	//根据用户名找到存储在本地的cookie，从中提取用户信息，用户信息的内容用“，”隔开。
 	Cookie[] cookies = request.getCookies();
 	String userInf = "";
 	for(Cookie c : cookies){
@@ -51,58 +51,65 @@ h6 {
 		i++;
 	}
 	%>
-	<form class="form-horizontal" role="form" action="<%=request.getContextPath() %>/com.jiange.servlet/UserInfServlet?action=changeInf" method="post">
-	
-	<div >
-	<h3>我的基本信息</h3>
-		<h6 >
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="petName" class="col-sm-2 control-label " >昵称：</label>
-				<div class="col-sm-10" >
-					<input type="text" class="form-control" name="petName" placeholder="" style="width: 200px" value="<%=s[1]%>">
+	<form class="form-horizontal" role="form"
+		action="<%=request.getContextPath() %>/com.jiange.servlet/UserInfServlet?action=changeInf"
+		method="post">
+
+		<div>
+			<h3>我的基本信息</h3>
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="petName" class="col-sm-2 control-label ">昵称：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="petName"
+							placeholder="" style="width: 200px" value="<%=s[1]%>">
+					</div>
 				</div>
-			</div>
-		</h6>
-		<h6 >
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="realName" class="col-sm-2 control-label">真实姓名：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="realName" placeholder="" style="width: 200px" value="<%=s[2]%>">
+			</h6>
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="realName" class="col-sm-2 control-label">真实姓名：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="realName"
+							placeholder="" style="width: 200px" value="<%=s[2]%>">
+					</div>
 				</div>
-			</div>
-		</h6>
-		<h6>
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="telphone" class="col-sm-2 control-label">电话：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="telphone" placeholder="" style="width: 200px" value="<%=s[3]%>">
+			</h6>
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="telphone" class="col-sm-2 control-label">电话：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="telphone"
+							placeholder="" style="width: 200px" value="<%=s[3]%>">
+					</div>
 				</div>
-			</div>
-		</h6>
-		<h6>
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="ID" class="col-sm-2 control-label">证件：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="ID" placeholder="" style="width: 200px" value="<%=s[4]%>">
+			</h6>
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="ID" class="col-sm-2 control-label">证件：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="ID" placeholder=""
+							style="width: 200px" value="<%=s[4]%>">
+					</div>
 				</div>
-			</div>
-		</h6>
-		<hr>
+			</h6>
+			<hr>
 		</div>
 		<h3>驾驶信息</h3>
 		<div>
-		<h6>
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="drivingID" class="col-sm-2 control-label">驾驶证号：</label>
-				<div class="col-sm-10">
-					<input type="text" class="form-control" name="drivingID" placeholder="" style="width: 200px" value="<%=s[5]%>">
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="drivingID" class="col-sm-2 control-label">驾驶证号：</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="drivingID"
+							placeholder="" style="width: 200px" value="<%=s[5]%>">
+					</div>
 				</div>
-			</div>
-		</h6>
-		<h6>
-			<div class="form-group " style="width: 600px;margin-left: 200px">
-				<label for="carType" class="col-sm-2 control-label">准驾车型：</label>
-				<div class="col-sm-10">
+			</h6>
+			<h6>
+				<div class="form-group " style="width: 600px; margin-left: 200px">
+					<label for="carType" class="col-sm-2 control-label">准驾车型：</label>
+					<div class="col-sm-10">
 						<select class="form-control" name="carType" style="width: 200px">
 							<option selected="selected"><%=s[6]%></option>
 							<option>C2</option>
@@ -112,10 +119,12 @@ h6 {
 							<option>A1</option>
 						</select>
 					</div>
-			</div>
-		</h6>
+				</div>
+			</h6>
 		</div>
-		<input type="submit" class="btn btn-warning btn-sm"  style="width:70px;background-color:orange;margin-left: 370px;margin-bottom: 40px" value="保存">
+		<input type="submit" class="btn btn-warning btn-sm"
+			style="width: 70px; background-color: orange; margin-left: 370px; margin-bottom: 40px"
+			value="保存">
 	</form>
 </body>
 </html>

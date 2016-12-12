@@ -41,6 +41,7 @@ public class AlterOrderServlet extends HttpServlet {
 		
 		//根据url传过来的action选择调用方法
 		String action = request.getParameter("action");
+		
 		if(action.equals("showOrders")){
 			showOrders(request, response);
 			request.setAttribute("mainPage", "background/result/alterorder.jsp");

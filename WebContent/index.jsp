@@ -28,6 +28,7 @@
 	height: 280px;
 	width: 380px;
 	margin: 10px 5px;
+	
 }
 
 a>div {
@@ -167,10 +168,10 @@ a>div {
 				</div>
 			</div>
 			<div>
-			
-			<jsp:include page="roll.jsp"></jsp:include>
-			
-			
+
+				<jsp:include page="roll.jsp"></jsp:include>
+
+
 			</div>
 		</div>
 	</div>

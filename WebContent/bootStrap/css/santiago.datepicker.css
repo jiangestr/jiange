@@ -3,7 +3,7 @@
 }
 
 .ll-skin-santiago .ui-widget {
-	font-family: Helvetica Trebuchet MS,Tahoma,Verdana,Arial,sans-serif;
+	font-family: Helvetica Trebuchet MS, Tahoma, Verdana, Arial, sans-serif;
 }
 
 .ll-skin-santiago .ui-datepicker {
@@ -13,9 +13,9 @@
 .ll-skin-santiago .ui-widget-content {
 	border: none;
 	background: #fff;
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.19);
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.19);
-	box-shadow: 0 1px 3px rgba(0,0,0,.19);
+	-moz-box-shadow: 0 1px 3px rgba(0, 0, 0, .19);
+	-webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, .19);
+	box-shadow: 0 1px 3px rgba(0, 0, 0, .19);
 }
 
 .ll-skin-santiago .ui-datepicker-header {
@@ -26,11 +26,12 @@
 	border-bottom: none;
 	overflow: hidden;
 	text-transform: uppercase;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.35);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .35);
 	border-radius: 4px 4px 0 0;
 	-webkit-border-radius: 4px 4px 0 0;
 	-moz-border-radius: 4px 4px 0 0;
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMmIwYiIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NkMzAwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
+	background-image:
+		url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMmIwYiIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NkMzAwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
 	background-image: -moz-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 	background-image: -o-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 	background-image: -webkit-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
@@ -48,8 +49,8 @@
 	font-weight: normal;
 }
 
-.ll-skin-santiago .ui-datepicker .ui-datepicker-prev, 
-.ll-skin-santiago .ui-datepicker .ui-datepicker-next {
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev, .ll-skin-santiago .ui-datepicker .ui-datepicker-next
+	{
 	top: -1px;
 	background: #d33e13;
 	border-radius: 0;
@@ -60,7 +61,7 @@
 }
 
 .ll-skin-santiago .ui-datepicker .ui-datepicker-prev.ui-state-hover,
-.ll-skin-santiago .ui-datepicker .ui-datepicker-next.ui-state-hover {
+	.ll-skin-santiago .ui-datepicker .ui-datepicker-next.ui-state-hover {
 	background: #ba2c0c;
 }
 
@@ -74,8 +75,8 @@
 	border-left: 1px solid #a6280b;
 }
 
-.ll-skin-santiago .ui-datepicker .ui-datepicker-prev span, 
-.ll-skin-santiago .ui-datepicker .ui-datepicker-next span {
+.ll-skin-santiago .ui-datepicker .ui-datepicker-prev span,
+	.ll-skin-santiago .ui-datepicker .ui-datepicker-next span {
 	margin-top: -4px;
 	top: 40%;
 }
@@ -130,15 +131,14 @@
 	color: #b2b2b2;
 }
 
-.ll-skin-santiago td a.ui-state-active,
-.ll-skin-santiago td a.ui-state-active.ui-state-hover {
+.ll-skin-santiago td a.ui-state-active, .ll-skin-santiago td a.ui-state-active.ui-state-hover
+	{
 	color: #fff;
-	text-shadow: 0 -1px 0 rgba(0,0,0,.45);
-	background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMmIwYiIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NkMzAwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
+	text-shadow: 0 -1px 0 rgba(0, 0, 0, .45);
+	background-image:
+		url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEwMCAxMDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiPjxsaW5lYXJHcmFkaWVudCBpZD0iaGF0MCIgZ3JhZGllbnRVbml0cz0ib2JqZWN0Qm91bmRpbmdCb3giIHgxPSI1MCUiIHkxPSIxMDAlIiB4Mj0iNTAlIiB5Mj0iLTEuNDIxMDg1NDcxNTIwMmUtMTQlIj4KPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2IzMmIwYiIgc3RvcC1vcGFjaXR5PSIxIi8+CjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2NkMzAwYyIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgIDwvbGluZWFyR3JhZGllbnQ+Cgo8cmVjdCB4PSIwIiB5PSIwIiB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0idXJsKCNoYXQwKSIgLz4KPC9zdmc+);
 	background-image: -moz-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 	background-image: -o-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 	background-image: -webkit-linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 	background-image: linear-gradient(bottom, #b32b0b 0%, #cd300c 100%);
 }
-
-

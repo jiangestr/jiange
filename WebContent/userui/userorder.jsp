@@ -40,8 +40,8 @@
 		<div class="tabbable" id="tabs-233893" style="margin-top: 50px;">
 			<ul class="nav nav-tabs" style="margin-left: 10px">
 				<li class="active"><a href="#panel-543668" data-toggle="tab">全部订单</a></li>
-				<li ><a href="#panel-993654" data-toggle="tab">未还车订单</a></li>
-				<li ><a href="#panel-223777" data-toggle="tab">已完成订单</a></li>
+				<li><a href="#panel-993654" data-toggle="tab">未还车订单</a></li>
+				<li><a href="#panel-223777" data-toggle="tab">已完成订单</a></li>
 			</ul>
 			<div class="tab-content">
 
@@ -205,7 +205,8 @@
 								<td><%=order.getPre_cost()%></td>
 								<td><%=format.format(order.getReal_time_in())%></td>
 								<td><%=order.getReal_cost()%></td>
-								<td><a class="btn  btn-warning" href="${pageContext.request.contextPath }/com.jiange.servlet/EvaluateServlet?action=showPage&orderId=<%=order.getId()%>&license=<%=order.getLicense()%>">评价</a></td>
+								<td><a class="btn  btn-warning"
+									href="${pageContext.request.contextPath }/com.jiange.servlet/EvaluateServlet?action=showPage&orderId=<%=order.getId()%>&license=<%=order.getLicense()%>">评价</a></td>
 							</tr>
 							<%
 										}
@@ -213,9 +214,9 @@
 								}
 							%>
 						</tbody>
-				</div>
-			</div>
-		</div>
-	</div>
+						</div>
+						</div>
+						</div>
+						</div>
 </body>
 </html>

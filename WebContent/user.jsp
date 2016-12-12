@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
 	pageEncoding="utf-8"%>
-	<%@page import="com.jiange.model.User"%>
+<%@page import="com.jiange.model.User"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,10 +16,9 @@
 <script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 
 <style type="text/css">
-#head{
-  margin: 20px auto auto 100px;
+#head {
+	margin: 20px auto auto 100px;
 }
-
 </style>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -47,14 +46,15 @@
 				<div class="col-md-12 column"
 					style="height: 85px; background-color: #FFD700">
 					<div id="head">
-					<img alt="" style="height: 50px;width: 50px" src="${pageContext.request.contextPath }/image/x-man.jpg">
-					<span>欢迎光临用户：${currentUser.username} </span>
+						<img alt="" style="height: 50px; width: 50px"
+							src="${pageContext.request.contextPath }/image/x-man.jpg">
+						<span>欢迎光临用户：${currentUser.username} </span>
 					</div>
 				</div>
 			</div>
 			<div class="row clearfix"
 				style="height: 700px; background-color: #DCDCDC">
-				
+
 				<!-- 左列表 -->
 				<div class="col-md-2 column"
 					style="background-color: white; margin-left: 8%; margin-top: 15px">
@@ -77,8 +77,14 @@
 									data-parent="#panel-809758" href="#panel-element-498043">我的账户</a>
 							</div>
 							<div id="panel-element-498043" class="panel-collapse in">
-								<div class="panel-body"><a href="<%=request.getContextPath() %>/com.jiange.servlet/UserInfServlet?action=showInf">基本信息</a></div>
-								<div class="panel-body"><a href="<%=request.getContextPath() %>/com.jiange.servlet/ChangePassWordServlet?action=showPage">修改密码</a></div>
+								<div class="panel-body">
+									<a
+										href="<%=request.getContextPath() %>/com.jiange.servlet/UserInfServlet?action=showInf">基本信息</a>
+								</div>
+								<div class="panel-body">
+									<a
+										href="<%=request.getContextPath() %>/com.jiange.servlet/ChangePassWordServlet?action=showPage">修改密码</a>
+								</div>
 							</div>
 						</div>
 						<div class="panel panel-default">
@@ -88,7 +94,10 @@
 							</div>
 							<div id="panel-element-498055" class="panel-collapse in">
 								<div class="panel-body">会员章程</div>
-								<div class="panel-body"><a href="${pageContext.request.contextPath}/com.jiange.servlet/UserOthersServlet?action=rules">会员细则</a></div>
+								<div class="panel-body">
+									<a
+										href="${pageContext.request.contextPath}/com.jiange.servlet/UserOthersServlet?action=rules">会员细则</a>
+								</div>
 							</div>
 
 						</div>

@@ -124,4 +124,12 @@
     <servlet-name>EvaluateServlet</servlet-name>
     <url-pattern>/com.jiange.servlet/EvaluateServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>AdminServlet</servlet-name>
+    <servlet-class>com.jiange.servlet.AdminServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AdminServlet</servlet-name>
+    <url-pattern>/AdminPass</url-pattern>
+  </servlet-mapping>
 </web-app>
